@@ -14,7 +14,7 @@ $app = new DI\Bridge\Slim\App();
 $app->add(new LoggerMiddleware());
 
 $app->any('/{controller}/{action}', function(string $controller, string $action, Request $request, Response $response){
-
+    $response->getBody()->write("Controller: $controller, Action: $action");
 });
 
 $app->run();
