@@ -1,20 +1,19 @@
 <?php
 
 use PS\Architecture\Middleware\LoggerMiddleware;
-use Slim\Http\Request;
-use Slim\Http\Response;
+use PS\Web\Modules\Artist\Controllers\ArtistController;
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 require 'vendor/autoload.php';
 
-$app = new DI\Bridge\Slim\App();
+if (!is_dir('cache/views')) {
+    mkdir('cache/views', 0777, true);
+}
 
-$app->add(new LoggerMiddleware());
+$app = new \PS\Web\Core\App();
 
-$app->any('/{controller}/{action}', function(string $controller, string $action, Request $request, Response $response){
-    $response->getBody()->write("Controller: $controller, Action: $action");
-});
+$app->any('/artist/{name}', [ArtistController::class, 'details']);
 
 $app->run();
