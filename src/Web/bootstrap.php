@@ -13,7 +13,11 @@ if (!is_dir('cache/views')) {
 }
 
 $app = new \PS\Web\Core\App();
-
+//
+//$app->any('/{controller}/{action}[/{params:.*}]', function(string $controller, string $action){
+//    echo $controller."::".$action;
+//    echo count($args);
+//});
 $app->any('/artist/{name}', [ArtistController::class, 'details']);
 
 $app->run();
