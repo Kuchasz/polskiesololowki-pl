@@ -4,8 +4,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="theme-color" content="#d71919" />
 
-        <link rel="stylesheet" href="../public/css/style.css" />
-        <link rel="stylesheet" href="../public/css/media.css" />
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/media.css') }}" />
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin-ext' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -37,7 +37,7 @@
     	</section>
 
         <header class="container">
-            <img class="logo" src="img/polskiesolowki.png" alt="logo-polskiesolowki" />
+            <img class="logo" src="{{ asset('img/polskiesolowki.png') }}" alt="logo-polskiesolowki" />
 
             <nav class="menu">
                 <label for="menu"><i class="fa fa-bars"></i></label>
@@ -69,7 +69,6 @@
                 </ul>
             </div>
         </section>
-
         <footer>
             <div class="container">
                 <p>©<?php echo date("Y"); ?> POLSKIESOLOWKI.PL. ALL RIGHTS RESERVED</p>

@@ -742,7 +742,7 @@ section.blog > .more > a:hover {
 
 /* PARTNERS */
 section.partners {
-  background: url("img/partners.jpg") no-repeat;
+  background: url("../img/partners.jpg") no-repeat;
 }
 
 section.partners .container {
