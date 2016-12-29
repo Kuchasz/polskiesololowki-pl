@@ -1,7 +1,7 @@
 <?php
 
-use PS\Architecture\Middleware\LoggerMiddleware;
-use PS\Web\Modules\Artist\Controllers\ArtistController;
+use PS\Web\Config\Routes as RoutesConfig;
+use PS\Web\Core\App;
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
@@ -12,8 +12,9 @@ if (!is_dir('cache/views')) {
     mkdir('cache/views', 0777, true);
 }
 
-$app = new \PS\Web\Core\App();
+$app = new App();
 
-$app->any('/artist/{name}', [ArtistController::class, 'details']);
+$routesConfig = new RoutesConfig();
+$routesConfig->registerRoutes($app);
 
 $app->run();

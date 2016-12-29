@@ -2,7 +2,11 @@
 
 namespace PS\Web\Modules\Artist\Controllers;
 
-class ArtistsController
-{
+use PS\Web\Core\Controller;
 
+class ArtistsController extends Controller
+{
+    public function list(){
+        return $this->render([]);
+    }
 }

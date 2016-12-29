@@ -18,10 +18,11 @@ abstract class Controller
 
     protected function render(array $data){
         list(, $caller) = debug_backtrace(false, 0);
-        $callerFunction = $caller['function'];
+        $callerFunctionName = $caller['function'];
+        $viewName = ucfirst($callerFunctionName);
         $callerClass = (new \ReflectionClass($caller['class']))->getShortName();
         $callerClass = str_replace('Controller', '', $callerClass);
-        $viewPath = "$callerClass/Views/$callerFunction.twig";
+        $viewPath = "$callerClass/Views/$viewName.twig";
         return $this->view->render($this->response, $viewPath, $data);
     }
 }
