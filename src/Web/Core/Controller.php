@@ -22,7 +22,7 @@ abstract class Controller
         $viewName = ucfirst($callerFunctionName);
         $callerClass = (new \ReflectionClass($caller['class']))->getShortName();
         $callerClass = str_replace('Controller', '', $callerClass);
-        $viewPath = "$callerClass/Views/$viewName.twig";
+        $viewPath = "$callerClass/$viewName.twig";
         return $this->view->render($this->response, $viewPath, $data);
     }
 }

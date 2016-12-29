@@ -2,9 +2,9 @@
 
 namespace PS\Web\Config;
 
+use PS\Web\Areas\Artist\ArtistController;
+use PS\Web\Areas\Artist\ArtistsController;
 use PS\Web\Core\App;
-use PS\Web\Modules\Artist\Controllers\ArtistController;
-use PS\Web\Modules\Artist\Controllers\ArtistsController;
 
 class Routes{
 

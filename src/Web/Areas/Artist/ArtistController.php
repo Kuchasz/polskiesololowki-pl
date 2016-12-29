@@ -1,6 +1,6 @@
 <?php
 
-namespace PS\Web\Modules\Artist\Controllers;
+namespace PS\Web\Areas\Artist;
 
 use PS\Web\Core\Controller;
 

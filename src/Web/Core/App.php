@@ -15,7 +15,7 @@ class App extends \DI\Bridge\Slim\App
             'settings.displayErrorDetails' => true,
             Twig::class => function (ContainerInterface $c) {
 
-                $twig = new Twig(__DIR__.'/../Modules/', [
+                $twig = new Twig(__DIR__ . '/../Views/', [
                     'cache' => 'cache/views'
                 ]);
 
