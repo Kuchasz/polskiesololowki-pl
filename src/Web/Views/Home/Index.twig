@@ -1,0 +1,21 @@
+{% extends 'Shared/Layout.twig' %}
+
+{% block content %}
+
+    {{ include('Home/Slider.twig') }}
+
+    <section class="top container">
+        {{ include('Home/Instruction.twig') }}
+
+        {{ include('Home/Latest.twig') }}
+    </section>
+
+    {{ include('Home/Solos.twig') }}
+
+    {{ include('Home/About.twig') }}
+
+    {{ include('Home/Stats.twig') }}
+
+    {{ include('Home/Blog.twig') }}
+
+{% endblock %}

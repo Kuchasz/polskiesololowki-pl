@@ -54,9 +54,7 @@
             </nav>
         </header>
 
-        <section>
-            {% block content %}{% endblock %}
-        </section>
+        {% block content %}{% endblock %}
 
         <section class="partners">
             <div class="container">
@@ -69,6 +67,7 @@
                 </ul>
             </div>
         </section>
+
         <footer>
             <div class="container">
                 <p>©<?php echo date("Y"); ?> POLSKIESOLOWKI.PL. ALL RIGHTS RESERVED</p>

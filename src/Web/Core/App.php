@@ -18,7 +18,8 @@ class App extends \DI\Bridge\Slim\App
             Twig::class => function (ContainerInterface $c) {
 
                 $twig = new Twig(__DIR__ . '/../Views/', [
-                    'cache' => 'cache/views'
+                    //'cache' => 'cache/views'
+                    'cache' => false
                 ]);
 
                 $assetsUrl = '/public';
