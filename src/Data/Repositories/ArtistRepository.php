@@ -2,7 +2,19 @@
 
 namespace PS\Data\Repositories;
 
-class ArtistRepository implements IArtistRepository
+use PS\Data\Core\Repository;
+use PS\Domain\Artist\Entities\Artist;
+
+class ArtistRepository extends Repository implements IArtistRepository
 {
+    protected function getEntityClassName(): string
+    {
+        return Artist::class;
+    }
+
+    function findAll()
+    {
+        return $this->session->findAll();
+    }
 
 }

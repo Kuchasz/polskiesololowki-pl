@@ -3,8 +3,17 @@
 namespace PS\Web\Core;
 
 use DI\ContainerBuilder;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\Mapping\Driver\XmlDriver;
+use Doctrine\ORM\Tools\Setup;
 use Interop\Container\ContainerInterface;
+use PS\Data\Repositories\ArtistRepository;
+use PS\Data\Repositories\IArtistRepository;
 use PS\Twig\Extensions\AssetsExtension;
+use PS\Web\Config\Db;
+use PS\Web\Config\DoctrineFactory;
+use PS\Web\Config\TwigFactory;
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
 use Twig_SimpleFunction;
@@ -15,25 +24,13 @@ class App extends \DI\Bridge\Slim\App
     {
         $definitions = [
             'settings.displayErrorDetails' => true,
-            Twig::class => function (ContainerInterface $c) {
-
-                $twig = new Twig(__DIR__ . '/../Views/', [
-                    //'cache' => 'cache/views'
-                    'cache' => false
-                ]);
-
-                $assetsUrl = '/public';
-
-                $twig->addExtension(new AssetsExtension($assetsUrl));
-
-                $twig->addExtension(new TwigExtension(
-                    $c->get('router'),
-                    $c->get('request')->getUri()
-                ));
-
-                return $twig;
+            Twig::class => TwigFactory::create(),
+            EntityManagerInterface::class => DoctrineFactory::create(),
+            IArtistRepository::class => function(EntityManagerInterface $entityManager){
+                return new ArtistRepository($entityManager);
             }
         ];
+
         $builder->addDefinitions($definitions);
     }
 }
