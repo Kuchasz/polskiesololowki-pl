@@ -4,11 +4,13 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
         http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <entity name="PS\Domain\Artist\Entities\Artist" table="artist">
+    <entity name="PS\Domain\Common\Entities\CroppedImage" table="croppedImage">
         <id name="id" column="id" type="integer">
             <generator strategy="AUTO"/>
         </id>
-        <field name="name" column="name" type="string" length="255" nullable="false"/>
-        <field name="description" column="description" type="string" length="1024" nullable="true"/>
+        <field name="url" column="url" type="string" length="255" nullable="false"/>
+        <field name="pixelWidth" column="pixelWidth" type="integer" nullable="false"/>
+        <field name="pixelHeight" column="pixelHeight" type="integer" nullable="false"/>
+        <
     </entity>
 </doctrine-mapping>
