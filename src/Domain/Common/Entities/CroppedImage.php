@@ -2,9 +2,7 @@
 
 namespace PS\Domain\Common\Entities;
 
-class CroppedImage
+class CroppedImage extends Image
 {
-    public $id;
-    public $imageId;
-    public $url;
+    public $rawImageId;
 }

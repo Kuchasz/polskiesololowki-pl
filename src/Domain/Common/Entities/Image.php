@@ -2,8 +2,10 @@
 
 namespace PS\Domain\Common\Entities;
 
-class Image
+abstract class Image
 {
     public $id;
-    public $rawUrl;
+    public $url;
+    public $pixelWidth;
+    public $pixelHeight;
 }

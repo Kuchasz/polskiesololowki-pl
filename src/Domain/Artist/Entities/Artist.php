@@ -6,6 +6,5 @@ class Artist
 {
     public $id;
     public $name;
-    public $age;
-    public $favouriteBand;
+    public $description;
 }
