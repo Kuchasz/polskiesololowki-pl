@@ -7,4 +7,5 @@ class Artist
     public $id;
     public $name;
     public $description;
+    public $tracks;
 }

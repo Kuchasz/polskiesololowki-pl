@@ -6,5 +6,6 @@ class Answer
 {
     public $id;
     public $content;
-    public $userId;
+    public $user;
+    public $votes;
 }

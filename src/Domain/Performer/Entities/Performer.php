@@ -9,7 +9,9 @@ class Performer
     public $id;
     public $name;
     public $biography;
-    public $listImageId;
-    public $profileThumbImageId;
-    public $profileFullImageId;
+    public $listImage;
+    public $equipments;
+    public $tracks;
+    public $profileThumbImage;
+    public $profileFullImage;
 }

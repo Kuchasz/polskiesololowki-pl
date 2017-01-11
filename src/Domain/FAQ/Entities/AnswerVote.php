@@ -2,7 +2,6 @@
 
 namespace PS\Domain\FAQ;
 
-class AnswerVote
+class AnswerVote extends Vote
 {
-    public $answerId;
 }
