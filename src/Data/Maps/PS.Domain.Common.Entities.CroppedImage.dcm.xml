@@ -11,6 +11,5 @@
         <field name="url" column="url" type="string" length="255" nullable="false"/>
         <field name="pixelWidth" column="pixelWidth" type="integer" nullable="false"/>
         <field name="pixelHeight" column="pixelHeight" type="integer" nullable="false"/>
-        <
     </entity>
 </doctrine-mapping>

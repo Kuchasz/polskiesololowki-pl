@@ -8,4 +8,5 @@ class Track
     public $title;
     public $description;
     public $record;
+    public $artist;
 }

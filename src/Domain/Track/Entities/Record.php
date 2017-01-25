@@ -7,4 +7,5 @@ class Record
     public $id;
     public $recordIdentity;
     public $recordType;
+    public $track;
 }
