@@ -12,5 +12,6 @@
         <field name="description" column="description" type="string" length="1024" nullable="true"/>
         <one-to-one field="record" target-entity="PS\Domain\Track\Entities\Record"/>
         <many-to-one field="artist" target-entity="PS\Domain\Artist\Entities\Artist" inversed-by="tracks"/>
+        <many-to-one field="performer" target-entity="PS\Domain\Performer\Entities\Performer" inversed-by="tracks"/>
     </entity>
 </doctrine-mapping>

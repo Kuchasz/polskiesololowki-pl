@@ -9,4 +9,5 @@ class Track
     public $description;
     public $record;
     public $artist;
+    public $performer;
 }
