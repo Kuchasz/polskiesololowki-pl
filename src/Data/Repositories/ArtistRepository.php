@@ -17,4 +17,9 @@ class ArtistRepository extends Repository implements IArtistRepository
         return $this->session->findAll();
     }
 
+    function save(Artist $artist)
+    {
+        $this->entityManager->persist($artist);
+        $this->entityManager->flush();
+    }
 }
