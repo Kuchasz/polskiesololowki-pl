@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+        http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="PS\Domain\Common\Entities\User" table="user">
+        <id name="id" column="id" type="integer">
+            <generator strategy="AUTO"/>
+        </id>
+        <field name="name" column="name" type="string" length="255" nullable="false"/>
+        <one-to-many target-entity="PS\Domain\Common\Entities\Question" mapped-by="user" field="questions"/>
+        <one-to-many target-entity="PS\Domain\Common\Entities\Answer" mapped-by="user" field="answers"/>
+        <one-to-many target-entity="PS\Domain\Common\Entities\QuestionVote" mapped-by="user" field="questionVotes"/>
+        <one-to-many target-entity="PS\Domain\Common\Entities\AnswerVote" mapped-by="user" field="answerVotes"/>
+    </entity>
+</doctrine-mapping>
